@@ -34,3 +34,22 @@ function sortArr(arr) {
 
 const sArr = sortArr(arr);
 console.log(sArr());
+
+// merged with unique array
+let array1 = [1, 2, 3];
+let array2 = [2, 3, 4];
+
+let arrMerged = [...new Set([...array1, ...array2])]
+console.log(arrMerged)
+
+// find common values in both Array
+
+const commonValue = (arr1,arr2)=>{
+    const commonData = arr1.filter((item)=>{
+        return arr2.includes(item)
+    })
+    return commonData;
+}
+
+console.log(commonValue(array1,array2));
+
