@@ -1,5 +1,3 @@
-const list = [1,2,3,4,5];
-
 // polyfill of map 
 Array.prototype.customMap = function (callbackFn) {
   const result = [];
@@ -9,8 +7,6 @@ Array.prototype.customMap = function (callbackFn) {
   }
   return result;
 };
-
-
 
 const arr = [1,2,3]
 const arrData = arr.customMap((item)=>item*2)
@@ -31,8 +27,33 @@ console.log(arrData)
   return result;
 };
 
+const list = [1,2,3,4,5,6,7,8,9,10];
+
+function reducer (acc, curr) {
+  return acc+ curr
+}
+
 const reduceSumCustom = list.customReducer(reducer, 1);
 console.log(reduceSumCustom);
+
+// PolyFill For Filter
+Array.prototype.customFilter = function (callbackFn, thisArg) {
+  const arr = this;
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i in arr) {
+      if (callbackFn.call(thisArg, arr[i], i, arr)) {
+        result.push(arr[i]);
+      }
+    }
+  }
+  return result;
+};
+
+const filteredData = list.customFilter((item) => {
+  return item % 2 === 0;
+});
+console.log(filteredData);
 
 // Polyfill Promise All
 Promise.myAll = function (promiseList) {
