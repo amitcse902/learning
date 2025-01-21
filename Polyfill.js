@@ -13,8 +13,6 @@ const arrData = arr.myMap((item)=>item*2)
 console.log(arrData)
 
 // Polyfill for reduce 
-
-
  Array.prototype.customReducer = function (reducer, initialValue) {
   const arr = this;
   let result = arr[0];
