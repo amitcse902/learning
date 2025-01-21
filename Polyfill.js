@@ -12,6 +12,19 @@ const arr = [1,2,3]
 const arrData = arr.customMap((item)=>item*2)
 console.log(arrData)
 
+// Polyfill for forEach 
+Array.prototype.customforEach = function(callbackFn){
+    for(let i =0 ;i<this.length;i++){
+        callbackFn(this[i]);
+    }
+}
+const list = [1,2,3,4,5,6,7,8,9,10];
+const result = []
+list.customforEach((item)=>{
+  result.push(item)
+})
+console.log(result);
+
 // Polyfill for reduce 
  Array.prototype.customReducer = function (reducer, initialValue) {
   const arr = this;
@@ -27,7 +40,7 @@ console.log(arrData)
   return result;
 };
 
-const list = [1,2,3,4,5,6,7,8,9,10];
+//const list = [1,2,3,4,5,6,7,8,9,10];
 
 function reducer (acc, curr) {
   return acc+ curr
