@@ -81,6 +81,13 @@ const flattenArrWithFor = (arr,res=[])=>{
  }
     return res;
 }
-
-
 console.log(flattenArrWithFor(input))
+
+// Flatten Array with  Reduce
+const flattenArrWithReduce = (arr) => {
+  const fltArr = arr.reduce((acc, val) => {
+    return Array.isArray(val) ? acc.concat(flattenArrWithReduce(val)) : acc.concat(val);
+  }, []);
+  return fltArr;
+}
+console.log(flattenArrWithReduce(input));
