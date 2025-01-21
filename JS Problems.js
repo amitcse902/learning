@@ -55,7 +55,6 @@ console.log(commonValue(array1,array2));
 
 //Flatten Array with  forEach
 
-
 const input = [1, [2, 3, [4]], [5, 6, [7, 8]], 9, 10]
 // expected output = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -69,8 +68,8 @@ const flattenArrWithForEach = (arr,res=[])=>{
  })
     return res;
 }
-
 console.log(flattenArrWithForEach(input))
+
 //Flatten Array with  for Loop
 const flattenArrWithFor = (arr,res=[])=>{
  for(let i=0;i<arr.length;i++){
