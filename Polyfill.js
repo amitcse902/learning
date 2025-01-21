@@ -1,4 +1,6 @@
- // polyfill of map 
+const list = [1,2,3,4,5];
+
+// polyfill of map 
 Array.prototype.customMap = function (callbackFn) {
   const result = [];
   for (let i = 0; i < this.length; i++) {
