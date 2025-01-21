@@ -13,21 +13,25 @@ const arrData = arr.myMap((item)=>item*2)
 console.log(arrData)
 
 // Polyfill for reduce 
-Array.prototype.myReduce = function(reducer, initalValue) {
-  const araay = this;
-  let result = araay[0];
+
+
+ Array.prototype.customReducer = function (reducer, initialValue) {
+  const arr = this;
+  let result = arr[0];
   let init = 1;
-  if (typeof initalValue !== "undefined") {
-    result = initalValue;
+  if (typeof initialValue !== "undefined") {
+    result = initialValue;
     init = 0;
   }
-  for (let i = init; i < araay.length; i++) {
-    result = reducer(result, araay[i]);
+  for (let i = init; i < arr.length; i++) {
+    result = reducer(result, arr[i]);
   }
   return result;
-}
-const reduceSumCustom = list.myReduce(reducer, 1);
+};
+
+const reduceSumCustom = list.customReducer(reducer, 1);
 console.log(reduceSumCustom);
+
 // Polyfill Promise All
 Promise.myAll = function (promiseList) {
     const result = [];
