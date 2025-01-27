@@ -91,3 +91,23 @@ const flattenArrWithReduce = (arr) => {
   return fltArr;
 }
 console.log(flattenArrWithReduce(input));
+
+// ara[2,4,3] => 342
+function getNumberFromDigits(digits) {
+  let num = 0;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    num += digits[i] * getPow(10, i);
+  }
+  return num;
+}
+function getPow (base, pow) {
+  let num = 1;
+  for (let i = 0; i < pow; i++) {
+    num *= base;
+  }
+  return num
+}
+
+console.log(getNumberFromDigits([2,4,3])) //342
+
+
