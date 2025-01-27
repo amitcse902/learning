@@ -110,4 +110,91 @@ function getPow (base, pow) {
 
 console.log(getNumberFromDigits([2,4,3])) //342
 
+const users = [
+  {
+    id: 1,
+    name: "Alice",
+    age: 30,
+    isActive: true,
+  },
+  {
+    id: 2,
+    name: "Bob",
+    age: 25,
+    isActive: false,
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    age: 35,
+    isActive: true,
+  },
+];
 
+const updatedUser = users.map((item) => {
+  if (item.isActive) {
+    return {
+      ...item,
+      address: {
+        country: "india",
+        state: "delhi",
+        zipcode: 110054,
+      },
+      hobbies: ["a", "b", "c"],
+    };
+  } else {
+    return item;
+  }
+});
+
+console.log(updatedUser);
+
+users.forEach((item) => {
+  if (item.isActive) {
+    const data = {
+      ...item,
+      address: {
+        country: "india",
+        state: "delhi",
+        zipcode: 110054,
+      },
+      hobbies: ["a", "b", "c"],
+    };
+    console.log(data);
+  } else {
+    console.log(item);
+  }
+});
+
+// const users = [
+//   {
+//     id: 1,
+//     name: 'Alice',
+//     age: 30,
+//     isActive: true,
+//     address:{
+//       country:'india',
+//       state: 'delhi',
+//       zipcode:110054
+//     },
+//     hobbies: ['a', 'b', 'c']
+//   },
+//   {
+//     id: 2,
+//     name: 'Bob',
+//     age: 25,
+//     isActive: false
+//   },
+//   {
+//     id: 3,
+//     name: 'Charlie',
+//     age: 35,
+//     isActive: true,
+//     address:{
+//       country:'india',
+//       state: 'delhi',
+//       zipcode:110054
+//     },
+//     hobbies: ['a', 'b', 'c']
+//   }
+// ];
