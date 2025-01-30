@@ -92,6 +92,30 @@ const flattenArrWithReduce = (arr) => {
 }
 console.log(flattenArrWithReduce(input));
 
+// Flatten Array with sorted value 
+let array = [1,2,[3,4,[6,7]],[9,1,[3,6,7,[11]]],10,22,12];
+//result = [1,2,3,4,6,7,9,10,11,12,22]
+const flattenArr = (arr,res=[])=>{
+    arr.forEach((item)=>{
+    if(Array.isArray(item)){
+        flattenArr(item,res)
+    }else{
+        res.push(item)
+    }
+    })
+    const uniqArr = [...new Set(res)].sort((a, b) => a - b)
+    return uniqArr
+}
+console.log(flattenArr(array))
+
+// FlatttenArr with array method
+
+const flattenArrMethod =(arr)=>{
+    const sortedMArr = [...new Set(arr.flat(Infinity))].sort((a,b)=>a-b)
+    return sortedMArr
+}
+console.log(flattenArrMethod(array))
+
 // ara[2,4,3] => 342
 function getNumberFromDigits(digits) {
   let num = 0;
