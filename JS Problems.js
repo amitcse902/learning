@@ -222,3 +222,17 @@ users.forEach((item) => {
 //     hobbies: ['a', 'b', 'c']
 //   }
 // ];
+
+
+const str = 'Welcome to HCLTech'
+
+const reverseString = (str)=>{
+    const arr = str.split(' ');
+    const newStr = arr.map((item)=>{
+        const list = item.split('').reverse().join('')
+        return list
+    })
+    return newStr.join(' ')
+}
+console.log(reverseString(str))
+
