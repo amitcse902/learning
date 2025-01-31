@@ -235,4 +235,25 @@ const reverseString = (str)=>{
     return newStr.join(' ')
 }
 console.log(reverseString(str))
+// with for loop 
+function reverseEachWord(sentence) {
+    let result = "";
+    let wordStart = 0;
+    for (let i = 0; i <= sentence.length; i++) {
+        if (i === sentence.length || sentence[i] === ' ') {
+            // Reverse the word manually
+            for (let j = i-1; j >= wordStart; j--) {
+                result += sentence[j];
+            }
+            if (i !== sentence.length) result += ' '; // Preserve spaces
+            wordStart = i + 1; // Move to the next word
+        }
+    }
+    return result;
+}
+// Test case
+let inputText = "Welcome to HCLTech";
+let outputText = reverseEachWord(inputText);
+console.log(outputText);
+
 
