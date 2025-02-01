@@ -259,8 +259,8 @@ console.log(outputText);
 // second largest number
 const arr = [10, 20, 4, 99, 99, 45,67];
  const findSecondLargest = (arr)=>{
-     let firstLargest = -1
-     let secondLargest = -1;
+     let firstLargest = -Infinity;
+    let secondLargest = -Infinity;
      for(let num of arr){
          //console.log(`"num: " ${num},"firstLargest: "${firstLargest},"secondLargest: "${secondLargest}`)
          if(num>firstLargest){
@@ -273,4 +273,22 @@ const arr = [10, 20, 4, 99, 99, 45,67];
      return secondLargest;
  }
  console.log(findSecondLargest(arr))
+
+// second Smallest number
+const findSecondSmallestNumber = (arr)=>{
+    let firstSmallest = Infinity;
+    let secondSmallest = Infinity;
+    for(let num of arr){
+        if(num<firstSmallest){
+            secondSmallest=firstSmallest
+            firstSmallest=num;
+        } else if(num<secondSmallest && num>firstSmallest){
+            secondSmallest = num;
+        }
+    }
+    return secondSmallest;
+}
+
+console.log(findSecondSmallestNumber(arr))
+
 
