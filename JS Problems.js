@@ -291,4 +291,15 @@ const findSecondSmallestNumber = (arr)=>{
 
 console.log(findSecondSmallestNumber(arr))
 
+//write a function that will contain an array of integers and returns a new array with only the unique elements. You are not allowed to use any inbuilt function
 
+const arr = [7, 8, 8, 9, 10, 7, 10];
+const uniqArr =(arr)=>{
+    const uniqList = [];
+    for(let i =0;i<arr.length;i++){
+    if(!uniqList.includes(arr[i]))
+       uniqList.push(arr[i]);
+    }
+    return uniqList
+}
+console.log(uniqArr(arr))
