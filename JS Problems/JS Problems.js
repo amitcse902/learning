@@ -343,3 +343,28 @@ const removeDuplicate = (arr) => {
   return finalArr;
 };
 console.log(removeDuplicate(inputArr));
+
+Easy Questions
+1. Two Sum
+2. Find the missing Number (1 to N)
+3. Find the Smallest and Largest element in the Array
+4. Reverse an Array
+5. Remove Duplicates from a sorted Array
+6. Moves zeroes to the end of Array
+7. check if an Array is sorted
+8. Intersection and union of Two Arrays
+9. Rotate an Array(cyclic Rotation)
+10. Find the First and second smallest element in an array
+
+Medium question
+1. Maximum SubArray Sum
+2. Best time to buy and sell stock
+3. Sort an Array of 0s,1s and 2s.
+4. Find the Majority Element
+5. Kth Largest and Smallest Element in Array.
+6. Find all Pairs in an Array that Sum to a Given Value.
+7. Rearrange an array with alternating positive and negative numbers
+8. Find the longest consecutive sequence
+9. Next greater element
+10. Sliding Window Maximum
+
